@@ -1,0 +1,62 @@
+@font-face {
+    font-family: '04b';
+    src: url('../fonts/04b_03__-webfont.eot');
+    src: url('../fonts/04b_03__-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/04b_03__-webfont.woff') format('woff'),
+         url('../fonts/04b_03__-webfont.ttf') format('truetype'),
+         url('../fonts/04b_03__-webfont.svg#Digital') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html, body{
+	background:#ecebcc url("../images/game-frame.png") top center no-repeat;
+	margin:0; padding: 0;
+}
+
+canvas{
+	position: relative;
+	margin: 0 auto;
+}
+
+#directions{
+	background: url("../images/directions.png") no-repeat;
+	position: absolute;
+	top: 40px; left: 0;
+	width: 256px; height: 623px;
+}
+
+#willy-social{
+    background: #c1cbb2;
+    font-family: '04b';
+    font-size: 16px;
+    padding: 5px;
+    position: fixed;
+    top: 0px; left: 0px;
+    width: 246px; height: 20px;
+}
+
+	#willy-social p{
+		float: left;
+		margin: 2px 10px 0 0;
+	}
+
+	#willy-social iframe{
+		display: block;
+		float: left;
+	}
+
+#martha-callout{
+	background: url("../images/martha-callout.png") no-repeat;
+	position: absolute;
+	right:0; bottom:0;
+	width: 256px; height: 512px;
+}
+
+#loading{
+    font-family: '04b';
+    font-size: 16px;
+    margin: 0 auto;
+    position: relative;
+    width: 448px;
+}
