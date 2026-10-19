@@ -1,25 +1,109 @@
-<!doctype html> 
-<html lang="en"> 
-<head> 
-	
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="description" content="No Eyes Willy: Willy the miner can't see a thing. Tap him to turn him around, fill the gaps, and get him safely to Martha." />
+    <meta name="theme-color" content="#ecebcc" />
     <title>No Eyes Willy</title>
+    <link rel="icon" href="data:," />
+    <script type="module" src="/src/main.ts"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#controls">Skip to game controls</a>
+    <div class="page">
+      <aside class="side side-left" aria-labelledby="howto-title-wide">
+        <h2 id="howto-title-wide" class="sr-only">How to play (illustrated)</h2>
+        <img
+          class="art"
+          src="/src/assets/ui/directions.png"
+          width="256"
+          height="623"
+          alt="How to play: Willy the miner can't see a thing in the mines and wanders around on his own. Click on Willy to make him change direction. Click an empty box to fill it with a bridge piece so Willy doesn't get impaled. Get Willy safely to Martha and you'll advance to the next level."
+        />
+      </aside>
 
-    <link href="css/style.css" rel="stylesheet">
-   	
+      <main class="main">
+        <h1 class="title">No Eyes Willy</h1>
+        <p class="level-indicator" id="level-indicator" aria-live="polite">Loading…</p>
 
-</head>
-<body>
+        <div class="frame">
+          <div class="stage" id="stage" data-phase="loading">
+            <div id="game" class="game"></div>
 
-    <script type="text/javascript" src="js/phaser.min.js"></script>
-    <script src="js/boot.js"></script>
-    <script src="js/player.js"></script>
-    <script src="js/enemies.js"></script>
-    <script src="js/npc.js"></script>
-    <script src="js/levels.js"></script>
-    <script src="js/game.js"></script>
+            <div class="overlay title-screen" id="title-screen" hidden>
+              <img class="title-art" src="/src/assets/ui/title.png" width="448" height="448" alt="No Eyes Willy" />
+              <button type="button" class="sprite-btn btn-play" id="play-button" aria-label="Play"></button>
+            </div>
 
-</body>
+            <div class="overlay end-screen" id="end-screen" hidden>
+              <button type="button" class="sprite-btn btn-next" id="next-button" aria-label="Next level"></button>
+              <button type="button" class="sprite-btn btn-retry" id="retry-button" aria-label="Retry level"></button>
+              <button type="button" class="sprite-btn btn-restart" id="restart-button" aria-label="Play again from level 1"></button>
+            </div>
+
+            <div class="overlay paused-screen" id="paused-screen" hidden>
+              <p>Paused</p>
+              <p class="hint">Press Resume to keep going.</p>
+            </div>
+
+            <div class="overlay message-screen" id="loading-screen" role="status">
+              <p id="loading-text">Loading… 0%</p>
+            </div>
+
+            <div class="overlay message-screen" id="error-screen" role="alert" hidden>
+              <p class="error-title">Could not load the game</p>
+              <p id="error-detail" class="hint"></p>
+              <button type="button" class="ui-btn" id="reload-button">Reload</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="controls" id="controls" role="group" aria-label="Game controls">
+          <button type="button" class="ui-btn" id="start-button">Start</button>
+          <button type="button" class="ui-btn" id="pause-button">Pause</button>
+          <button type="button" class="ui-btn" id="restart-level-button">Restart</button>
+          <button type="button" class="ui-btn" id="levels-button" aria-haspopup="dialog">Level Select</button>
+          <button type="button" class="ui-btn" id="mute-button">Mute</button>
+        </div>
+        <p class="sr-only" id="announcer" role="status" aria-live="polite"></p>
+
+        <section class="howto" aria-labelledby="howto-title">
+          <h2 id="howto-title">How to play</h2>
+          <ul>
+            <li>Willy can't see a thing, so he wanders on his own. He climbs ladders by himself.</li>
+            <li>Click or tap Willy to make him turn around.</li>
+            <li>Click or tap an empty box to fill it with a bridge piece (it stays filled) so Willy doesn't get impaled.</li>
+            <li>Get Willy safely to Martha to advance to the next level.</li>
+          </ul>
+        </section>
+      </main>
+
+      <aside class="side side-right" aria-labelledby="martha-title">
+        <h2 id="martha-title" class="sr-only">Martha's message</h2>
+        <img
+          class="art"
+          src="/src/assets/ui/martha-callout.png"
+          width="256"
+          height="512"
+          alt="Martha says: Howdy, I'm Martha! My dag gum sweet idiot husband, Willy, needs your help. He keeps blowing dynamite up in his face and gets his glasses all dirty and can't see a thing! Will you guide him to me so I can splash his glasses with some water?"
+        />
+      </aside>
+    </div>
+
+    <footer class="credits">
+      <p>
+        No Eyes Willy &copy; 2014 blockbot. Rebuilt with TypeScript, Vite and <a href="https://phaser.io" rel="noopener">Phaser</a>; the original art, sounds and
+        levels are unchanged. Typeface 04b_03 by Yuji Oshimoto. See CREDITS.md.
+      </p>
+    </footer>
+
+    <dialog id="levels-dialog" class="levels-dialog" aria-labelledby="levels-title">
+      <form method="dialog">
+        <h2 id="levels-title">Level Select</h2>
+        <ol class="level-list" id="level-list"></ol>
+        <button type="submit" class="ui-btn" id="levels-close">Close</button>
+      </form>
+    </dialog>
+  </body>
 </html>

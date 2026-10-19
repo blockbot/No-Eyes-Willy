@@ -184,7 +184,7 @@ export function solveLevel(index: number, opts: SolveOptions = {}): RouteFile | 
     const actions: RouteAction[] = [];
     let k: string | null = winKey;
     while (k) {
-      const p = visited.get(k)!;
+      const p: Parent = visited.get(k)!;
       if (p.action) actions.push(p.action);
       k = p.key;
     }
