@@ -84,7 +84,7 @@ export class GameScene extends Phaser.Scene implements Presenter {
     this.load.on('loaderror', (file: Phaser.Loader.File) => this.missing.push(file.key));
     this.load.on('progress', (value: number) => this.hooks?.onProgress(value));
 
-    const url = (p: string): string => assetUrl(`assets/${p}`);
+    const url = (p: string): string => assetUrl(`game/${p}`);
     this.load.spritesheet('tiles', url('tiles/tiles.png'), { frameWidth: TILE_SIZE, frameHeight: TILE_SIZE });
     this.load.image('ladders', url('tiles/ladders.png'));
     this.load.image('spikes', url('tiles/spikes.png'));

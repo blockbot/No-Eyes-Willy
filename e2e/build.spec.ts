@@ -53,7 +53,7 @@ test('the production build runs from a nested sub-path with every asset derived 
 });
 
 test('missing assets show a clear error and disable the game instead of hanging', async ({ page }) => {
-  await page.route('**/assets/sprites/willy.png', (route) => route.fulfill({ status: 404, body: 'gone' }));
+  await page.route('**/game/sprites/willy.png', (route) => route.fulfill({ status: 404, body: 'gone' }));
   await page.goto('/?test=1');
   await expect(page.locator('#stage')).toHaveAttribute('data-phase', 'error', { timeout: 30_000 });
   await expect(page.getByRole('alert')).toContainText('Could not load the game');

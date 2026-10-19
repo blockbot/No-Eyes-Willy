@@ -7,10 +7,10 @@ const TAG = 'legacy-phaser2-final';
 const MAP = [
   ['assets/tilemaps/test.json', 'src/levels/maps/test.json'],
   ...[1, 2, 3, 4, 5, 6, 7].map((n) => [`assets/tilemaps/level0_${n}.json`, `src/levels/maps/level0_${n}.json`]),
-  ...['blood', 'clean', 'explosion', 'martha', 'skull', 'willy'].map((n) => [`assets/sprites/${n}.png`, `public/assets/sprites/${n}.png`]),
+  ...['blood', 'clean', 'explosion', 'martha', 'skull', 'willy'].map((n) => [`assets/sprites/${n}.png`, `public/game/sprites/${n}.png`]),
   ...['btn-next', 'btn-play', 'btn-restart', 'btn-retry', 'title'].map((n) => [`assets/sprites/${n}.png`, `src/assets/ui/${n}.png`]),
-  ...['ladders', 'spikes', 'tiles'].map((n) => [`assets/tiles/${n}.png`, `public/assets/tiles/${n}.png`]),
-  ...['death', 'explosion', 'powerup', 'select', 'splash'].map((n) => [`assets/sounds/${n}.wav`, `public/assets/sounds/${n}.wav`]),
+  ...['ladders', 'spikes', 'tiles'].map((n) => [`assets/tiles/${n}.png`, `public/game/tiles/${n}.png`]),
+  ...['death', 'explosion', 'powerup', 'select', 'splash'].map((n) => [`assets/sounds/${n}.wav`, `public/game/sounds/${n}.wav`]),
   ...['directions', 'martha-callout', 'game-frame'].map((n) => [`images/${n}.png`, `src/assets/ui/${n}.png`]),
   ['fonts/04b_03__-webfont.woff', 'src/assets/fonts/04b_03__-webfont.woff'],
 ];

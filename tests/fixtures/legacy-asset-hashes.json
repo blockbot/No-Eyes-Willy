@@ -33,27 +33,27 @@
    "legacyPath": "assets/tilemaps/level0_7.json",
    "sha256": "007478e966b697ca1871704791820d607906e38ea3e2fba0cfbaa231ac535230"
   },
-  "public/assets/sprites/blood.png": {
+  "public/game/sprites/blood.png": {
    "legacyPath": "assets/sprites/blood.png",
    "sha256": "08c7122dbf15fdae6e7ddd5005a73602a9f731a2c1c5d9ec888cbe17550188b7"
   },
-  "public/assets/sprites/clean.png": {
+  "public/game/sprites/clean.png": {
    "legacyPath": "assets/sprites/clean.png",
    "sha256": "6615626faf460d4311bd5852796d70b927679ee4559868cd4f6b4c7b655e87a7"
   },
-  "public/assets/sprites/explosion.png": {
+  "public/game/sprites/explosion.png": {
    "legacyPath": "assets/sprites/explosion.png",
    "sha256": "13086c5da7d4c3347100b7fd95b4db2224b4f7b7f272a539766ccd58db40d615"
   },
-  "public/assets/sprites/martha.png": {
+  "public/game/sprites/martha.png": {
    "legacyPath": "assets/sprites/martha.png",
    "sha256": "bda89ee87e9b9a5dd8d9eb649e03c5c03a7b7270a37585e0c87b4e78300faa26"
   },
-  "public/assets/sprites/skull.png": {
+  "public/game/sprites/skull.png": {
    "legacyPath": "assets/sprites/skull.png",
    "sha256": "670f24e99ff42dc895a5e4ac06b1179204613fb999247d8b513a2c55ddfbb081"
   },
-  "public/assets/sprites/willy.png": {
+  "public/game/sprites/willy.png": {
    "legacyPath": "assets/sprites/willy.png",
    "sha256": "c99a473383cb7e3d864b19d835ec6a5c2cc5f5b6bf4001e18ff013e93d25c181"
   },
@@ -77,35 +77,35 @@
    "legacyPath": "assets/sprites/title.png",
    "sha256": "4279cc552a89710d8d24321d08c3f3b1d522fd4ada8c1e713063e3bc2f828f89"
   },
-  "public/assets/tiles/ladders.png": {
+  "public/game/tiles/ladders.png": {
    "legacyPath": "assets/tiles/ladders.png",
    "sha256": "67fd6d14c853eed95691e349bbb723a4cc1e7d6f1d007177724431b62ad21cff"
   },
-  "public/assets/tiles/spikes.png": {
+  "public/game/tiles/spikes.png": {
    "legacyPath": "assets/tiles/spikes.png",
    "sha256": "f4bf72a068affa40964f33bc007fadeccb4054befe6d84a8e9c6cbcc23f47449"
   },
-  "public/assets/tiles/tiles.png": {
+  "public/game/tiles/tiles.png": {
    "legacyPath": "assets/tiles/tiles.png",
    "sha256": "da0d463ff03071f34ec727771fdafd423203df12198252a50ec1ecce1cd0eb68"
   },
-  "public/assets/sounds/death.wav": {
+  "public/game/sounds/death.wav": {
    "legacyPath": "assets/sounds/death.wav",
    "sha256": "bd48df63eb23994636bddf2c6111f21f197c7bb3bbc9324743370e296f7e088c"
   },
-  "public/assets/sounds/explosion.wav": {
+  "public/game/sounds/explosion.wav": {
    "legacyPath": "assets/sounds/explosion.wav",
    "sha256": "b5aa28157e44b5fe30023c2d40d2fe523149e0fb00bd530def228b5205ef5339"
   },
-  "public/assets/sounds/powerup.wav": {
+  "public/game/sounds/powerup.wav": {
    "legacyPath": "assets/sounds/powerup.wav",
    "sha256": "62d707e51cdf944ab39b942f27c1d7de50ae818050a87040ac9580049aa2face"
   },
-  "public/assets/sounds/select.wav": {
+  "public/game/sounds/select.wav": {
    "legacyPath": "assets/sounds/select.wav",
    "sha256": "de750799e47c379b2baaf1a2686af16bd36d56cf6eb7a4969c27c5fbcaabbe32"
   },
-  "public/assets/sounds/splash.wav": {
+  "public/game/sounds/splash.wav": {
    "legacyPath": "assets/sounds/splash.wav",
    "sha256": "ee1386a1bf6069dbc01bfae41e3259d06b95272dd1b1ca3deed9beef1865eb11"
   },
