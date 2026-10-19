@@ -6,7 +6,16 @@ import { Shell } from './ui/shell';
 import { GameScene } from './view/scene';
 import { installTestHook } from './testing/hook';
 
+/** Browsers with no usable audio output (some kiosks, containers) reject the audio-context resume; the game stays playable without sound. */
+function tolerateMissingAudioDevice(): void {
+  window.addEventListener('unhandledrejection', (e) => {
+    const reason = e.reason as { name?: string; message?: string } | undefined;
+    if (reason?.name === 'InvalidStateError' && /audio device/i.test(reason.message ?? '')) e.preventDefault();
+  });
+}
+
 function boot(): void {
+  tolerateMissingAudioDevice();
   const scene = new GameScene();
   const controller = new GameController(scene);
   const prefs = new Preferences();

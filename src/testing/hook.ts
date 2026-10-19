@@ -20,6 +20,7 @@ export interface NswSnapshot {
   vx: number;
   scaleX: number;
   outcome: string;
+  outcomeTick: number;
   alive: boolean;
   exists: boolean;
   anim: string;
@@ -54,6 +55,7 @@ export function installTestHook({ controller, scene, shell }: TestHookTargets): 
         vx: s?.willy.vx ?? 0,
         scaleX: s?.scaleX ?? 1,
         outcome: s?.outcome ?? 'none',
+        outcomeTick: s?.outcomeTick ?? -1,
         alive: s?.alive ?? true,
         exists: s?.exists ?? true,
         anim: s?.anim ?? 'walk',
