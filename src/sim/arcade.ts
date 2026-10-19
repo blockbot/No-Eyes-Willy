@@ -58,6 +58,14 @@ export class TileGrid {
     }
   }
 
+  clone(): TileGrid {
+    const copy = new TileGrid([], this.width, this.height);
+    copy.data.length = 0;
+    for (const row of this.data) copy.data.push(row.map((t) => (t ? { ...t } : null)));
+    copy.collideIndexes.push(...this.collideIndexes);
+    return copy;
+  }
+
   get widthPx(): number {
     return this.width * TILE_SIZE;
   }
@@ -183,6 +191,20 @@ export class Body {
     this.y = this.prevY = y;
     this.width = width;
     this.height = height;
+  }
+
+  clone(): Body {
+    const copy = new Body(this.x, this.y, this.width, this.height);
+    copy.prevX = this.prevX;
+    copy.prevY = this.prevY;
+    copy.vx = this.vx;
+    copy.vy = this.vy;
+    copy.gravityY = this.gravityY;
+    copy.immovable = this.immovable;
+    copy.collideWorldBounds = this.collideWorldBounds;
+    Object.assign(copy.checkCollision, this.checkCollision);
+    Object.assign(copy.blocked, this.blocked);
+    return copy;
   }
 
   get right(): number {

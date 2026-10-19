@@ -1,0 +1,340 @@
+{
+ "level": 5,
+ "id": "Level_0_5",
+ "winTick": 1685,
+ "ticks": 1685,
+ "actions": [
+  {
+   "tick": 6,
+   "worldX": 144,
+   "worldY": 720,
+   "intent": "fill",
+   "tile": [
+    4,
+    22
+   ]
+  },
+  {
+   "tick": 7,
+   "worldX": 176,
+   "worldY": 720,
+   "intent": "fill",
+   "tile": [
+    5,
+    22
+   ]
+  },
+  {
+   "tick": 8,
+   "worldX": 208,
+   "worldY": 720,
+   "intent": "fill",
+   "tile": [
+    6,
+    22
+   ]
+  },
+  {
+   "tick": 9,
+   "worldX": 240,
+   "worldY": 720,
+   "intent": "fill",
+   "tile": [
+    7,
+    22
+   ]
+  },
+  {
+   "tick": 10,
+   "worldX": 272,
+   "worldY": 720,
+   "intent": "fill",
+   "tile": [
+    8,
+    22
+   ]
+  },
+  {
+   "tick": 11,
+   "worldX": 304,
+   "worldY": 720,
+   "intent": "fill",
+   "tile": [
+    9,
+    22
+   ]
+  },
+  {
+   "tick": 12,
+   "worldX": 80,
+   "worldY": 848,
+   "intent": "fill",
+   "tile": [
+    2,
+    26
+   ]
+  },
+  {
+   "tick": 13,
+   "worldX": 112,
+   "worldY": 848,
+   "intent": "fill",
+   "tile": [
+    3,
+    26
+   ]
+  },
+  {
+   "tick": 14,
+   "worldX": 144,
+   "worldY": 848,
+   "intent": "fill",
+   "tile": [
+    4,
+    26
+   ]
+  },
+  {
+   "tick": 15,
+   "worldX": 176,
+   "worldY": 848,
+   "intent": "fill",
+   "tile": [
+    5,
+    26
+   ]
+  },
+  {
+   "tick": 16,
+   "worldX": 208,
+   "worldY": 880,
+   "intent": "fill",
+   "tile": [
+    6,
+    27
+   ]
+  },
+  {
+   "tick": 17,
+   "worldX": 240,
+   "worldY": 880,
+   "intent": "fill",
+   "tile": [
+    7,
+    27
+   ]
+  },
+  {
+   "tick": 18,
+   "worldX": 272,
+   "worldY": 880,
+   "intent": "fill",
+   "tile": [
+    8,
+    27
+   ]
+  },
+  {
+   "tick": 41,
+   "worldX": 272,
+   "worldY": 624,
+   "intent": "fill",
+   "tile": [
+    8,
+    19
+   ]
+  },
+  {
+   "tick": 42,
+   "worldX": 304,
+   "worldY": 624,
+   "intent": "fill",
+   "tile": [
+    9,
+    19
+   ]
+  },
+  {
+   "tick": 43,
+   "worldX": 336,
+   "worldY": 624,
+   "intent": "fill",
+   "tile": [
+    10,
+    19
+   ]
+  },
+  {
+   "tick": 98,
+   "worldX": 368,
+   "worldY": 880,
+   "intent": "fill",
+   "tile": [
+    11,
+    27
+   ]
+  },
+  {
+   "tick": 99,
+   "worldX": 400,
+   "worldY": 880,
+   "intent": "fill",
+   "tile": [
+    12,
+    27
+   ]
+  },
+  {
+   "tick": 100,
+   "worldX": 432,
+   "worldY": 880,
+   "intent": "fill",
+   "tile": [
+    13,
+    27
+   ]
+  },
+  {
+   "tick": 118,
+   "worldX": 400,
+   "worldY": 720,
+   "intent": "fill",
+   "tile": [
+    12,
+    22
+   ]
+  },
+  {
+   "tick": 119,
+   "worldX": 432,
+   "worldY": 720,
+   "intent": "fill",
+   "tile": [
+    13,
+    22
+   ]
+  },
+  {
+   "tick": 230,
+   "worldX": 240,
+   "worldY": 592,
+   "intent": "fill",
+   "tile": [
+    7,
+    18
+   ]
+  },
+  {
+   "tick": 231,
+   "worldX": 208,
+   "worldY": 592,
+   "intent": "fill",
+   "tile": [
+    6,
+    18
+   ]
+  },
+  {
+   "tick": 232,
+   "worldX": 176,
+   "worldY": 592,
+   "intent": "fill",
+   "tile": [
+    5,
+    18
+   ]
+  },
+  {
+   "tick": 299,
+   "worldX": 336,
+   "worldY": 496,
+   "intent": "fill",
+   "tile": [
+    10,
+    15
+   ]
+  },
+  {
+   "tick": 300,
+   "worldX": 304,
+   "worldY": 496,
+   "intent": "fill",
+   "tile": [
+    9,
+    15
+   ]
+  },
+  {
+   "tick": 301,
+   "worldX": 272,
+   "worldY": 496,
+   "intent": "fill",
+   "tile": [
+    8,
+    15
+   ]
+  },
+  {
+   "tick": 604,
+   "worldX": 46,
+   "worldY": 542,
+   "intent": "reverse"
+  },
+  {
+   "tick": 753,
+   "worldX": 272,
+   "worldY": 566,
+   "intent": "reverse"
+  },
+  {
+   "tick": 754,
+   "worldX": 272,
+   "worldY": 569,
+   "intent": "reverse"
+  },
+  {
+   "tick": 1029,
+   "worldX": 368,
+   "worldY": 112,
+   "intent": "fill",
+   "tile": [
+    11,
+    3
+   ]
+  },
+  {
+   "tick": 1030,
+   "worldX": 336,
+   "worldY": 112,
+   "intent": "fill",
+   "tile": [
+    10,
+    3
+   ]
+  },
+  {
+   "tick": 1076,
+   "worldX": 345,
+   "worldY": 317,
+   "intent": "reverse"
+  },
+  {
+   "tick": 1091,
+   "worldX": 367,
+   "worldY": 409,
+   "intent": "reverse"
+  },
+  {
+   "tick": 1387,
+   "worldX": 110,
+   "worldY": 254,
+   "intent": "reverse"
+  },
+  {
+   "tick": 1589,
+   "worldX": 210,
+   "worldY": 62,
+   "intent": "reverse"
+  }
+ ]
+}

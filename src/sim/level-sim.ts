@@ -55,7 +55,7 @@ interface Timer {
 
 export class LevelSim {
   readonly level: ParsedLevel;
-  readonly grid: TileGrid;
+  grid: TileGrid;
   readonly willy: Body;
   readonly martha: Body;
   readonly ladders: Body[];
@@ -92,16 +92,28 @@ export class LevelSim {
   cameraY = 0;
   tickCount = 0;
 
+  private gridShared = false;
   private timers: Timer[] = [];
   private deathScheduled = false;
   private events: SimEvent[] = [];
 
-  constructor(level: ParsedLevel) {
+  constructor(level: ParsedLevel, template?: LevelSim) {
     this.level = level;
+    this.bounds = { x: 0, y: 0, right: level.widthPx, bottom: level.heightPx };
+    if (template) {
+      this.grid = template.grid;
+      this.gridShared = true;
+      this.willy = template.willy.clone();
+      this.martha = template.martha;
+      this.ladders = template.ladders;
+      this.spikes = template.spikes;
+      this.spriteX = template.spriteX;
+      this.spriteY = template.spriteY;
+      return;
+    }
     this.grid = new TileGrid(level.tiles, level.width, level.height);
     this.grid.setCollisionBetween(TILE_SOLID_FIRST, TILE_SOLID_LAST);
     this.grid.setCollision(TILE_BRIDGE);
-    this.bounds = { x: 0, y: 0, right: level.widthPx, bottom: level.heightPx };
 
     this.spriteX = level.willy.x;
     this.spriteY = level.willy.y;
@@ -117,6 +129,55 @@ export class LevelSim {
     this.spikes = level.spikes.map((r) => new Body(r.x, r.y, r.w, r.h));
 
     this.updateCamera();
+  }
+
+  /**
+   * Independent copy of the full simulation state, used by the route search and by tests. The tile grid is
+   * shared copy-on-write, because only a world edit ever mutates it.
+   */
+  clone(): LevelSim {
+    this.gridShared = true;
+    const copy = new LevelSim(this.level, this);
+    copy.spriteX = this.spriteX;
+    copy.spriteY = this.spriteY;
+    copy.scaleX = this.scaleX;
+    copy.alive = this.alive;
+    copy.exists = this.exists;
+    copy.anim = this.anim;
+    copy.animStartTick = this.animStartTick;
+    copy.marthaSplashTick = this.marthaSplashTick;
+    copy.marthaIdle = this.marthaIdle;
+    copy.velocityX = this.velocityX;
+    copy.walking = this.walking;
+    copy.didWin = this.didWin;
+    copy.isClimbing = this.isClimbing;
+    copy.wasClimbing = this.wasClimbing;
+    copy.ladderCheck = this.ladderCheck;
+    copy.posX = this.posX;
+    copy.direction = this.direction;
+    copy.endCheck = this.endCheck;
+    copy.wait = this.wait;
+    copy.outcome = this.outcome;
+    copy.outcomeTick = this.outcomeTick;
+    copy.cameraX = this.cameraX;
+    copy.cameraY = this.cameraY;
+    copy.tickCount = this.tickCount;
+    copy.timers = this.timers.map((t) => ({ ...t }));
+    copy.deathScheduled = this.deathScheduled;
+    copy.events = this.events.slice();
+    return copy;
+  }
+
+  /** Pending delayed callbacks relative to now, for state de-duplication in tools. */
+  timerSignature(): string {
+    return this.timers.map((t) => `${t.kind}${t.due - this.tickCount}`).sort().join(',');
+  }
+
+  private ownGrid(): void {
+    if (this.gridShared) {
+      this.grid = this.grid.clone();
+      this.gridShared = false;
+    }
   }
 
   /** Drains events produced since the last call. */
@@ -308,6 +369,7 @@ export class LevelSim {
     const ty = Math.floor(worldY / TILE_SIZE);
     const tile = this.grid.tileAt(tx, ty);
     if (tile && tile.index === TILE_EDITABLE) {
+      this.ownGrid();
       this.grid.putTile(TILE_BRIDGE, tx, ty);
       this.events.push({ type: 'sound', name: 'select' }, { type: 'tileEdited', tx, ty });
       result.edited = true;
