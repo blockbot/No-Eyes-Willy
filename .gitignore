@@ -1,0 +1,5 @@
+node_modules/
+.legacy-cache/
+dist/
+test-results/
+playwright-report/

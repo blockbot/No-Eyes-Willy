@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Legacy baseline harness</title>
+<!-- Compatibility repair #1: the legacy create() writes into #loading, which the committed index.html never defined. -->
+<style>body{margin:0;background:#c0dbe2}</style>
+</head>
+<body>
+<div id="loading"></div>
+<script src="/games/noeyeswilly/js/phaser.min.js"></script>
+<script src="/games/noeyeswilly/js/boot.js"></script>
+<script src="/games/noeyeswilly/js/player.js"></script>
+<script src="/games/noeyeswilly/js/enemies.js"></script>
+<script src="/games/noeyeswilly/js/npc.js"></script>
+<script src="/games/noeyeswilly/js/levels.js"></script>
+<script src="/games/noeyeswilly/js/game.js"></script>
+<script src="/harness.js"></script>
+</body>
+</html>
