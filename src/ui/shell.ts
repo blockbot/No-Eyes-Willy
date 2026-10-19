@@ -63,10 +63,9 @@ export class Shell {
     this.sync(this.controller.state);
   }
 
-  private listen<K extends keyof HTMLElementEventMap>(target: HTMLElement | Document | Window, type: string, fn: (e: never) => void, options: AddEventListenerOptions = {}): void {
+  private listen(target: EventTarget, type: string, fn: (e: never) => void, options: AddEventListenerOptions = {}): void {
     this.listenerCount++;
-    (target as EventTarget).addEventListener(type, fn as EventListener, { ...options, signal: this.abort.signal });
-    void (null as unknown as K);
+    target.addEventListener(type, fn as EventListener, { ...options, signal: this.abort.signal });
   }
 
   get registeredListeners(): number {

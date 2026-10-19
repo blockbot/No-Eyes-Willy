@@ -10,6 +10,9 @@ const WALK_FRAMES = [2, 3, 2, 4];
 const DANCE_FRAMES = [0, 0, 1, 1];
 const CLIMB_FRAMES = [5, 5, 6, 6];
 const DEAD_FRAME = 7;
+/** Registering animations in the original left each sprite on the first frame of the last one added: Willy on the climb pose, Martha on the first splash frame. */
+const WILLY_INITIAL_FRAME = 5;
+const MARTHA_INITIAL_FRAME = 1;
 const MARTHA_SPLASH_FRAMES = [1, 2, 3, 4];
 const BLOOD_COUNT = 500;
 const BLOOD_LIFE_TICKS = 180;
@@ -64,6 +67,9 @@ export class GameScene extends Phaser.Scene implements Presenter {
   private level: ParsedLevel | null = null;
   private shown = 0;
   private muted = false;
+  private shownFrame = WILLY_INITIAL_FRAME;
+  private frameAnim = '';
+  private frameAnimStart = -1;
 
   constructor() {
     super(GameScene.KEY);
@@ -130,6 +136,9 @@ export class GameScene extends Phaser.Scene implements Presenter {
   showLevel(sim: LevelSim, level: ParsedLevel): void {
     this.level = level;
     this.shown++;
+    this.shownFrame = WILLY_INITIAL_FRAME;
+    this.frameAnim = '';
+    this.frameAnimStart = -1;
     this.rng = mulberry32(level.index + 1);
     const track = <T extends Phaser.GameObjects.GameObject>(o: T): T => {
       this.levelObjects.push(o);
@@ -148,11 +157,11 @@ export class GameScene extends Phaser.Scene implements Presenter {
     for (const r of level.spikes) track(this.add.image(r.x, r.y, 'spikes').setOrigin(0, 0));
 
     const m = level.martha.sprite;
-    this.martha = track(this.add.sprite(m.x, m.y, 'martha', 0));
+    this.martha = track(this.add.sprite(m.x, m.y, 'martha', MARTHA_INITIAL_FRAME));
     this.martha.setOrigin(level.marthaAnchored ? 0.5 : 0, level.marthaAnchored ? 0.5 : 0);
     if (level.marthaFlipped) this.martha.setScale(-1, 1);
 
-    this.willy = track(this.add.sprite(sim.spriteX, sim.spriteY, 'willy', WALK_FRAMES[0]));
+    this.willy = track(this.add.sprite(sim.spriteX, sim.spriteY, 'willy', WILLY_INITIAL_FRAME));
     this.explosion = track(this.add.sprite(level.explosion.x, level.explosion.y, 'explosion', 0).setOrigin(0, 0));
 
     this.lastParticleTick = sim.tickCount;
@@ -206,7 +215,7 @@ export class GameScene extends Phaser.Scene implements Presenter {
       this.willy.setFrame(this.willyFrame(sim));
     }
     if (this.martha) this.martha.setFrame(this.marthaFrame(sim));
-    if (this.explosion) this.explosion.setFrame(Math.min(5, Math.floor((sim.tickCount * 10) / 60)));
+    if (this.explosion) this.explosion.setFrame(Math.min(5, Math.floor(Math.max(0, sim.tickCount - 2) / 6)));
     if (this.banner) {
       const sinceOutcome = sim.tickCount - sim.outcomeTick;
       if (sim.outcome === 'won') this.banner.setFrame(sinceOutcome >= 30 ? 1 : 0);
@@ -214,25 +223,35 @@ export class GameScene extends Phaser.Scene implements Presenter {
     this.stepParticles(sim.tickCount);
   }
 
+  /**
+   * Phaser 2 started every animation one frame-delay late: for the first 8 ticks after `play()` the previous
+   * texture frame stayed on screen, then the sequence continued from its second entry. Matching that keeps the
+   * walk, climb and dance cycles in phase with the original.
+   */
   private willyFrame(sim: LevelSim): number {
-    const elapsed = Math.max(0, sim.tickCount - sim.animStartTick);
-    const idx = Math.floor((elapsed * 8) / 60);
-    switch (sim.anim) {
-      case 'dead':
-        return DEAD_FRAME;
-      case 'climb':
-        return CLIMB_FRAMES[idx % CLIMB_FRAMES.length] ?? 5;
-      case 'dance':
-        return DANCE_FRAMES[idx % DANCE_FRAMES.length] ?? 0;
-      default:
-        return WALK_FRAMES[idx % WALK_FRAMES.length] ?? 2;
+    const elapsed = Math.max(0, sim.tickCount - 1 - sim.animStartTick);
+    const step = Math.floor((elapsed * 8) / 60);
+    if (this.frameAnim !== sim.anim || this.frameAnimStart !== sim.animStartTick) {
+      this.frameAnim = sim.anim;
+      this.frameAnimStart = sim.animStartTick;
     }
+    if (sim.anim === 'dead') return this.rememberFrame(DEAD_FRAME);
+    if (step < 1) return this.shownFrame;
+    const seq = sim.anim === 'climb' ? CLIMB_FRAMES : sim.anim === 'dance' ? DANCE_FRAMES : WALK_FRAMES;
+    return this.rememberFrame(seq[step % seq.length] ?? 0);
+  }
+
+  private rememberFrame(frame: number): number {
+    this.shownFrame = frame;
+    return frame;
   }
 
   private marthaFrame(sim: LevelSim): number {
-    if (sim.marthaIdle || sim.marthaSplashTick === null) return 0;
-    const idx = Math.min(MARTHA_SPLASH_FRAMES.length - 1, Math.floor(((sim.tickCount - sim.marthaSplashTick) * 16) / 60));
-    return MARTHA_SPLASH_FRAMES[idx] ?? 0;
+    if (sim.marthaIdle) return 0;
+    if (sim.marthaSplashTick === null) return MARTHA_INITIAL_FRAME;
+    const elapsed = Math.max(0, sim.tickCount - 1 - sim.marthaSplashTick);
+    const idx = Math.min(MARTHA_SPLASH_FRAMES.length - 1, Math.floor((elapsed * 16) / 60));
+    return MARTHA_SPLASH_FRAMES[idx] ?? MARTHA_INITIAL_FRAME;
   }
 
   private showBanner(outcome: 'dead' | 'won'): void {
