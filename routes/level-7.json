@@ -1,0 +1,290 @@
+{
+ "level": 7,
+ "id": "Level_0_7",
+ "winTick": 1734,
+ "ticks": 1734,
+ "actions": [
+  {
+   "tick": 6,
+   "worldX": 304,
+   "worldY": 784,
+   "intent": "fill",
+   "tile": [
+    9,
+    24
+   ]
+  },
+  {
+   "tick": 43,
+   "worldX": 176,
+   "worldY": 656,
+   "intent": "fill",
+   "tile": [
+    5,
+    20
+   ]
+  },
+  {
+   "tick": 44,
+   "worldX": 144,
+   "worldY": 656,
+   "intent": "fill",
+   "tile": [
+    4,
+    20
+   ]
+  },
+  {
+   "tick": 45,
+   "worldX": 112,
+   "worldY": 656,
+   "intent": "fill",
+   "tile": [
+    3,
+    20
+   ]
+  },
+  {
+   "tick": 148,
+   "worldX": 304,
+   "worldY": 464,
+   "intent": "fill",
+   "tile": [
+    9,
+    14
+   ]
+  },
+  {
+   "tick": 149,
+   "worldX": 272,
+   "worldY": 464,
+   "intent": "fill",
+   "tile": [
+    8,
+    14
+   ]
+  },
+  {
+   "tick": 150,
+   "worldX": 240,
+   "worldY": 464,
+   "intent": "fill",
+   "tile": [
+    7,
+    14
+   ]
+  },
+  {
+   "tick": 151,
+   "worldX": 208,
+   "worldY": 464,
+   "intent": "fill",
+   "tile": [
+    6,
+    14
+   ]
+  },
+  {
+   "tick": 152,
+   "worldX": 176,
+   "worldY": 464,
+   "intent": "fill",
+   "tile": [
+    5,
+    14
+   ]
+  },
+  {
+   "tick": 153,
+   "worldX": 144,
+   "worldY": 464,
+   "intent": "fill",
+   "tile": [
+    4,
+    14
+   ]
+  },
+  {
+   "tick": 154,
+   "worldX": 112,
+   "worldY": 464,
+   "intent": "fill",
+   "tile": [
+    3,
+    14
+   ]
+  },
+  {
+   "tick": 574,
+   "worldX": 112,
+   "worldY": 336,
+   "intent": "fill",
+   "tile": [
+    3,
+    10
+   ]
+  },
+  {
+   "tick": 575,
+   "worldX": 144,
+   "worldY": 336,
+   "intent": "fill",
+   "tile": [
+    4,
+    10
+   ]
+  },
+  {
+   "tick": 576,
+   "worldX": 176,
+   "worldY": 336,
+   "intent": "fill",
+   "tile": [
+    5,
+    10
+   ]
+  },
+  {
+   "tick": 577,
+   "worldX": 208,
+   "worldY": 336,
+   "intent": "fill",
+   "tile": [
+    6,
+    10
+   ]
+  },
+  {
+   "tick": 578,
+   "worldX": 240,
+   "worldY": 336,
+   "intent": "fill",
+   "tile": [
+    7,
+    10
+   ]
+  },
+  {
+   "tick": 579,
+   "worldX": 272,
+   "worldY": 336,
+   "intent": "fill",
+   "tile": [
+    8,
+    10
+   ]
+  },
+  {
+   "tick": 580,
+   "worldX": 304,
+   "worldY": 336,
+   "intent": "fill",
+   "tile": [
+    9,
+    10
+   ]
+  },
+  {
+   "tick": 581,
+   "worldX": 336,
+   "worldY": 336,
+   "intent": "fill",
+   "tile": [
+    10,
+    10
+   ]
+  },
+  {
+   "tick": 656,
+   "worldX": 46,
+   "worldY": 414,
+   "intent": "reverse"
+  },
+  {
+   "tick": 953,
+   "worldX": 368,
+   "worldY": 176,
+   "intent": "fill",
+   "tile": [
+    11,
+    5
+   ]
+  },
+  {
+   "tick": 954,
+   "worldX": 336,
+   "worldY": 176,
+   "intent": "fill",
+   "tile": [
+    10,
+    5
+   ]
+  },
+  {
+   "tick": 955,
+   "worldX": 304,
+   "worldY": 176,
+   "intent": "fill",
+   "tile": [
+    9,
+    5
+   ]
+  },
+  {
+   "tick": 956,
+   "worldX": 272,
+   "worldY": 176,
+   "intent": "fill",
+   "tile": [
+    8,
+    5
+   ]
+  },
+  {
+   "tick": 957,
+   "worldX": 240,
+   "worldY": 176,
+   "intent": "fill",
+   "tile": [
+    7,
+    5
+   ]
+  },
+  {
+   "tick": 958,
+   "worldX": 208,
+   "worldY": 176,
+   "intent": "fill",
+   "tile": [
+    6,
+    5
+   ]
+  },
+  {
+   "tick": 959,
+   "worldX": 176,
+   "worldY": 176,
+   "intent": "fill",
+   "tile": [
+    5,
+    5
+   ]
+  },
+  {
+   "tick": 960,
+   "worldX": 144,
+   "worldY": 176,
+   "intent": "fill",
+   "tile": [
+    4,
+    5
+   ]
+  },
+  {
+   "tick": 1388,
+   "worldX": 46,
+   "worldY": 62,
+   "intent": "reverse"
+  }
+ ]
+}

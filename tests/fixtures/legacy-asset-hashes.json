@@ -1,0 +1,129 @@
+{
+ "tag": "legacy-phaser2-final",
+ "files": {
+  "src/levels/maps/test.json": {
+   "legacyPath": "assets/tilemaps/test.json",
+   "sha256": "33af3f830d2972838863e894aac4c29bc688112e37de1f192d4e2f9548bbb0aa"
+  },
+  "src/levels/maps/level0_1.json": {
+   "legacyPath": "assets/tilemaps/level0_1.json",
+   "sha256": "31f2f98b97f2af0428efa02bc1a43b53af52a7d36d2c31e7b38c33dfce7a2723"
+  },
+  "src/levels/maps/level0_2.json": {
+   "legacyPath": "assets/tilemaps/level0_2.json",
+   "sha256": "c78dbeb16f8c3babdcb0491e927b79f68cff651667498111f181d148cf64bb20"
+  },
+  "src/levels/maps/level0_3.json": {
+   "legacyPath": "assets/tilemaps/level0_3.json",
+   "sha256": "d7af040142f79d8037cdb35a7dc6be874d4d6439496e1f64e820f179993d5d25"
+  },
+  "src/levels/maps/level0_4.json": {
+   "legacyPath": "assets/tilemaps/level0_4.json",
+   "sha256": "f28c8fabbc961ac242eea1f34d4f0d52fbc46b6d556c36d3cf9d9d2192c6d75f"
+  },
+  "src/levels/maps/level0_5.json": {
+   "legacyPath": "assets/tilemaps/level0_5.json",
+   "sha256": "f5fd9708d1b0b9cfb52ca3cee06b8c625a1a9206e0ac28570f044ae9674b0824"
+  },
+  "src/levels/maps/level0_6.json": {
+   "legacyPath": "assets/tilemaps/level0_6.json",
+   "sha256": "c3351b14e168ef7547629340a79367773155ae6f7379cead0196e60811961aa4"
+  },
+  "src/levels/maps/level0_7.json": {
+   "legacyPath": "assets/tilemaps/level0_7.json",
+   "sha256": "007478e966b697ca1871704791820d607906e38ea3e2fba0cfbaa231ac535230"
+  },
+  "public/game/sprites/blood.png": {
+   "legacyPath": "assets/sprites/blood.png",
+   "sha256": "08c7122dbf15fdae6e7ddd5005a73602a9f731a2c1c5d9ec888cbe17550188b7"
+  },
+  "public/game/sprites/clean.png": {
+   "legacyPath": "assets/sprites/clean.png",
+   "sha256": "6615626faf460d4311bd5852796d70b927679ee4559868cd4f6b4c7b655e87a7"
+  },
+  "public/game/sprites/explosion.png": {
+   "legacyPath": "assets/sprites/explosion.png",
+   "sha256": "13086c5da7d4c3347100b7fd95b4db2224b4f7b7f272a539766ccd58db40d615"
+  },
+  "public/game/sprites/martha.png": {
+   "legacyPath": "assets/sprites/martha.png",
+   "sha256": "bda89ee87e9b9a5dd8d9eb649e03c5c03a7b7270a37585e0c87b4e78300faa26"
+  },
+  "public/game/sprites/skull.png": {
+   "legacyPath": "assets/sprites/skull.png",
+   "sha256": "670f24e99ff42dc895a5e4ac06b1179204613fb999247d8b513a2c55ddfbb081"
+  },
+  "public/game/sprites/willy.png": {
+   "legacyPath": "assets/sprites/willy.png",
+   "sha256": "c99a473383cb7e3d864b19d835ec6a5c2cc5f5b6bf4001e18ff013e93d25c181"
+  },
+  "src/assets/ui/btn-next.png": {
+   "legacyPath": "assets/sprites/btn-next.png",
+   "sha256": "95909ac4ae328097cfea4352dc53cdaacb7ed2d0f4950d5ba353c8473a57e71a"
+  },
+  "src/assets/ui/btn-play.png": {
+   "legacyPath": "assets/sprites/btn-play.png",
+   "sha256": "c9d8bd67149b3b89d2c7eee522e72626a6050eecf595d85f608a33417546796b"
+  },
+  "src/assets/ui/btn-restart.png": {
+   "legacyPath": "assets/sprites/btn-restart.png",
+   "sha256": "92dee9b9fd769410b81e8d97ee274fc32cc23aab848a48193e87915527c530d8"
+  },
+  "src/assets/ui/btn-retry.png": {
+   "legacyPath": "assets/sprites/btn-retry.png",
+   "sha256": "0716b3f77bdf22c4866a4ecf127a0a57e28b735110b660da4ed8f3e25d2d93a0"
+  },
+  "src/assets/ui/title.png": {
+   "legacyPath": "assets/sprites/title.png",
+   "sha256": "4279cc552a89710d8d24321d08c3f3b1d522fd4ada8c1e713063e3bc2f828f89"
+  },
+  "public/game/tiles/ladders.png": {
+   "legacyPath": "assets/tiles/ladders.png",
+   "sha256": "67fd6d14c853eed95691e349bbb723a4cc1e7d6f1d007177724431b62ad21cff"
+  },
+  "public/game/tiles/spikes.png": {
+   "legacyPath": "assets/tiles/spikes.png",
+   "sha256": "f4bf72a068affa40964f33bc007fadeccb4054befe6d84a8e9c6cbcc23f47449"
+  },
+  "public/game/tiles/tiles.png": {
+   "legacyPath": "assets/tiles/tiles.png",
+   "sha256": "da0d463ff03071f34ec727771fdafd423203df12198252a50ec1ecce1cd0eb68"
+  },
+  "public/game/sounds/death.wav": {
+   "legacyPath": "assets/sounds/death.wav",
+   "sha256": "bd48df63eb23994636bddf2c6111f21f197c7bb3bbc9324743370e296f7e088c"
+  },
+  "public/game/sounds/explosion.wav": {
+   "legacyPath": "assets/sounds/explosion.wav",
+   "sha256": "b5aa28157e44b5fe30023c2d40d2fe523149e0fb00bd530def228b5205ef5339"
+  },
+  "public/game/sounds/powerup.wav": {
+   "legacyPath": "assets/sounds/powerup.wav",
+   "sha256": "62d707e51cdf944ab39b942f27c1d7de50ae818050a87040ac9580049aa2face"
+  },
+  "public/game/sounds/select.wav": {
+   "legacyPath": "assets/sounds/select.wav",
+   "sha256": "de750799e47c379b2baaf1a2686af16bd36d56cf6eb7a4969c27c5fbcaabbe32"
+  },
+  "public/game/sounds/splash.wav": {
+   "legacyPath": "assets/sounds/splash.wav",
+   "sha256": "ee1386a1bf6069dbc01bfae41e3259d06b95272dd1b1ca3deed9beef1865eb11"
+  },
+  "src/assets/ui/directions.png": {
+   "legacyPath": "images/directions.png",
+   "sha256": "7a277f10fa46d21148ea8ce607399522ccada8e3352bd13b6bdb8adeb1c9ef6a"
+  },
+  "src/assets/ui/martha-callout.png": {
+   "legacyPath": "images/martha-callout.png",
+   "sha256": "43fed1358cb41b17b2b81fb36cd14b790ed17f4852ecf0e2749689953cad3262"
+  },
+  "src/assets/ui/game-frame.png": {
+   "legacyPath": "images/game-frame.png",
+   "sha256": "0bff5a738e9d03727902516d401ff9fb384f17f33e5b93ee85f4f51c1ee58c2a"
+  },
+  "src/assets/fonts/04b_03__-webfont.woff": {
+   "legacyPath": "fonts/04b_03__-webfont.woff",
+   "sha256": "da11d8fc90849a3a6893368cda0e8335cb98a0a9b7475c609b4da73c513c19c2"
+  }
+ }
+}
