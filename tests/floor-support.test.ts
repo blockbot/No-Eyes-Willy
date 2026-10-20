@@ -1,8 +1,13 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import zlib from 'node:zlib';
 import { describe, expect, it } from 'vitest';
+import { LEVELS } from '../src/levels/manifest';
 import { OBJECT_LADDER, TILE_EDITABLE, TILE_SIZE, WALK_SPEED, WILLY_BODY_W } from '../src/sim/constants';
 import { parseLevel } from '../src/sim/level';
 import type { LevelDef, TiledMap } from '../src/sim/level';
 import { LevelSim } from '../src/sim/level-sim';
+import type { RouteFile } from '../tools/routes/solve';
 
 /**
  * Small maps built from text rows: '#' solid tile, 'e' editable slot, '.' empty, 'H' empty cell with a
@@ -279,5 +284,63 @@ describe('floor support: ladders', () => {
     expect(climbedTo).toBeLessThanOrEqual(standY(5));
     const leftEdge = 6 * TILE_SIZE;
     for (const s of samples) if (s.foot < leftEdge && s.foot > leftEdge - 2 * TILE_SIZE) expect(s.y).not.toBe(standY(5));
+  });
+});
+
+describe('floor support: Willy never passes through a floor under his foot (campaign maps)', () => {
+  /** Plays a level and fails if, on any tick, his bottom crosses the top of a solid tile his foot is over. */
+  function playChecked(levelIndex: number, label: string, taps: (t: number, sim: LevelSim) => void, ticks: number): void {
+    const sim = new LevelSim(parseLevel(LEVELS[levelIndex]!));
+    for (let t = 0; t < ticks && sim.outcome === 'playing'; t++) {
+      taps(t, sim);
+      const before = sim.willy.bottom;
+      sim.tick();
+      const w = sim.willy;
+      if (!sim.alive || w.bottom <= before) continue;
+      const f = foot(sim);
+      const cols = f % TILE_SIZE === 0 ? [f / TILE_SIZE - 1, f / TILE_SIZE] : [Math.floor(f / TILE_SIZE)];
+      for (let ty = Math.ceil(before / TILE_SIZE); ty * TILE_SIZE < w.bottom; ty++) {
+        for (const tx of cols) {
+          const tile = sim.grid.tileAt(tx, ty);
+          expect(tile?.collideUp && tile.faceTop, `${label} tick ${t}: fell through the top of tile ${tx},${ty}`).toBeFalsy();
+        }
+      }
+    }
+  }
+
+  it('in every recorded route and legacy input sequence', () => {
+    const dir = path.resolve(__dirname, '../parity/traces');
+    for (const f of fs.readdirSync(dir).filter((n) => n.endsWith('.json.gz'))) {
+      const trace = JSON.parse(zlib.gunzipSync(fs.readFileSync(path.join(dir, f))).toString()) as {
+        level: number;
+        rows: unknown[];
+        clicks: Array<{ t: number; wx: number; wy: number; cam: [number, number] }>;
+      };
+      playChecked(trace.level, f, (t, s) => {
+        for (const c of trace.clicks) if (c.t === t) s.pointerDown(c.wx - c.cam[0], c.wy - c.cam[1]);
+      }, trace.rows.length);
+    }
+    for (const def of LEVELS) {
+      const route = JSON.parse(fs.readFileSync(path.resolve(__dirname, `../routes/level-${def.index}.json`), 'utf8')) as RouteFile;
+      playChecked(def.index, `route ${def.index}`, (t, s) => {
+        for (const a of route.actions) if (a.tick === t) s.pointerDown(a.worldX - s.cameraX, a.worldY - s.cameraY);
+      }, route.winTick + 5);
+    }
+  });
+
+  it('in seeded random play on every level, Level 5 most heavily', () => {
+    let seed = 12345;
+    const rnd = (): number => (seed = (seed * 1664525 + 1013904223) >>> 0) / 4294967296;
+    for (const def of LEVELS) {
+      for (let run = 0; run < (def.index === 4 ? 300 : 40); run++) {
+        const pFill = rnd() * 0.05;
+        const pTurn = rnd() * 0.02;
+        playChecked(def.index, `${def.title} run ${run}`, (t, s) => {
+          if (t < 6) return;
+          if (rnd() < pFill) s.pointerDown(Math.floor(rnd() * 448), Math.floor(rnd() * 448));
+          if (rnd() < pTurn) s.pointerDown(Math.round(s.spriteX - s.cameraX), Math.round(s.spriteY - s.cameraY));
+        }, 4000);
+      }
+    }
   });
 });
