@@ -1,23 +1,23 @@
 {
  "level": 6,
  "id": "Level_0_6",
- "winTick": 471,
- "ticks": 471,
+ "winTick": 461,
+ "ticks": 461,
  "actions": [
   {
-   "tick": 74,
-   "worldX": 604,
+   "tick": 69,
+   "worldX": 612,
    "worldY": 86,
    "intent": "reverse"
   },
   {
-   "tick": 89,
+   "tick": 79,
    "worldX": 624,
    "worldY": 169,
    "intent": "reverse"
   },
   {
-   "tick": 90,
+   "tick": 80,
    "worldX": 528,
    "worldY": 368,
    "intent": "fill",
@@ -27,7 +27,7 @@
    ]
   },
   {
-   "tick": 91,
+   "tick": 81,
    "worldX": 496,
    "worldY": 368,
    "intent": "fill",
@@ -37,7 +37,7 @@
    ]
   },
   {
-   "tick": 92,
+   "tick": 82,
    "worldX": 464,
    "worldY": 368,
    "intent": "fill",
@@ -47,7 +47,7 @@
    ]
   },
   {
-   "tick": 94,
+   "tick": 84,
    "worldX": 624,
    "worldY": 400,
    "intent": "fill",
@@ -57,7 +57,7 @@
    ]
   },
   {
-   "tick": 95,
+   "tick": 85,
    "worldX": 656,
    "worldY": 400,
    "intent": "fill",
@@ -67,7 +67,7 @@
    ]
   },
   {
-   "tick": 96,
+   "tick": 86,
    "worldX": 592,
    "worldY": 400,
    "intent": "fill",
@@ -77,7 +77,7 @@
    ]
   },
   {
-   "tick": 97,
+   "tick": 87,
    "worldX": 688,
    "worldY": 400,
    "intent": "fill",
@@ -87,7 +87,7 @@
    ]
   },
   {
-   "tick": 98,
+   "tick": 88,
    "worldX": 720,
    "worldY": 400,
    "intent": "fill",
@@ -97,7 +97,7 @@
    ]
   },
   {
-   "tick": 99,
+   "tick": 89,
    "worldX": 752,
    "worldY": 400,
    "intent": "fill",
@@ -107,7 +107,7 @@
    ]
   },
   {
-   "tick": 100,
+   "tick": 90,
    "worldX": 784,
    "worldY": 400,
    "intent": "fill",
@@ -117,7 +117,7 @@
    ]
   },
   {
-   "tick": 101,
+   "tick": 91,
    "worldX": 816,
    "worldY": 400,
    "intent": "fill",

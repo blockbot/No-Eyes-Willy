@@ -9,12 +9,16 @@ import type { RouteFile } from '../tools/routes/solve';
 
 const root = path.resolve(__dirname, '..');
 const loadRoute = (n: number): RouteFile => JSON.parse(fs.readFileSync(path.join(root, `routes/level-${n}.json`), 'utf8')) as RouteFile;
-const loadLegacy = (n: number): { cols: string[]; rows: Array<Array<number | string>> } =>
-  JSON.parse(zlib.gunzipSync(fs.readFileSync(path.join(root, `parity/traces/route-L${n}.json.gz`))).toString());
+interface LegacyRoute {
+  clicks: Array<{ t: number; wx: number; wy: number; cam: [number, number] }>;
+  cols: string[];
+  rows: Array<Array<number | string>>;
+}
+const loadLegacy = (n: number): LegacyRoute => JSON.parse(zlib.gunzipSync(fs.readFileSync(path.join(root, `parity/traces/route-L${n}.json.gz`))).toString()) as LegacyRoute;
 
 describe('winning routes (tap Willy to reverse, tap gaps to fill)', () => {
   for (const def of LEVELS) {
-    it(`${def.title}: the recorded route wins, on the same tick as the original Phaser 2 game`, () => {
+    it(`${def.title}: the recorded route wins on its recorded tick`, () => {
       const route = loadRoute(def.index);
       const sim = new LevelSim(parseLevel(def));
       const byTick = new Map<number, RouteFile['actions']>();
@@ -37,11 +41,22 @@ describe('winning routes (tap Willy to reverse, tap gaps to fill)', () => {
       expect(won).toBe(route.winTick);
       expect(reversals).toBeGreaterThan(0);
       expect(fills + reversals).toBeGreaterThanOrEqual(route.actions.length);
+    });
 
+    it(`${def.title}: the original game's route wins on the same tick under the legacy floor rule`, () => {
       const legacy = loadLegacy(def.index);
       const winCol = legacy.cols.indexOf('win');
       const legacyWin = legacy.rows.findIndex((row) => row[winCol] === 1);
-      expect(legacyWin, 'original game reaches Martha on the same tick').toBe(route.winTick);
+      expect(legacyWin).toBeGreaterThan(0);
+      const sim = new LevelSim(parseLevel(def));
+      sim.willy.footSupport = false;
+      let won = -1;
+      for (let t = 0; t <= legacyWin && won < 0; t++) {
+        for (const c of legacy.clicks.filter((k) => k.t === t)) sim.pointerDown(c.wx - c.cam[0], c.wy - c.cam[1]);
+        sim.tick();
+        if (sim.outcome === 'won') won = t;
+      }
+      expect(won).toBe(legacyWin);
     });
   }
 

@@ -121,6 +121,7 @@ export class LevelSim {
     this.willy.gravityY = WILLY_GRAVITY;
     this.willy.collideWorldBounds = true;
     this.willy.checkCollision.up = false;
+    this.willy.footSupport = true;
 
     this.martha = new Body(level.martha.x, level.martha.y, level.martha.w, level.martha.h);
     this.martha.immovable = true;

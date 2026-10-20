@@ -1,8 +1,8 @@
 {
  "level": 3,
  "id": "Level_0_3",
- "winTick": 881,
- "ticks": 881,
+ "winTick": 830,
+ "ticks": 830,
  "actions": [
   {
    "tick": 6,
@@ -165,7 +165,31 @@
    ]
   },
   {
-   "tick": 298,
+   "tick": 185,
+   "worldX": 575,
+   "worldY": 32,
+   "intent": "reverse"
+  },
+  {
+   "tick": 186,
+   "worldX": 573,
+   "worldY": 33,
+   "intent": "reverse"
+  },
+  {
+   "tick": 255,
+   "worldX": 447,
+   "worldY": 96,
+   "intent": "reverse"
+  },
+  {
+   "tick": 256,
+   "worldX": 445,
+   "worldY": 97,
+   "intent": "reverse"
+  },
+  {
+   "tick": 282,
    "worldX": 368,
    "worldY": 400,
    "intent": "fill",
@@ -175,7 +199,7 @@
    ]
   },
   {
-   "tick": 299,
+   "tick": 283,
    "worldX": 336,
    "worldY": 400,
    "intent": "fill",
@@ -185,7 +209,7 @@
    ]
   },
   {
-   "tick": 300,
+   "tick": 284,
    "worldX": 304,
    "worldY": 400,
    "intent": "fill",
@@ -195,7 +219,7 @@
    ]
   },
   {
-   "tick": 301,
+   "tick": 285,
    "worldX": 272,
    "worldY": 400,
    "intent": "fill",
@@ -205,7 +229,7 @@
    ]
   },
   {
-   "tick": 302,
+   "tick": 286,
    "worldX": 240,
    "worldY": 400,
    "intent": "fill",
@@ -215,7 +239,7 @@
    ]
   },
   {
-   "tick": 303,
+   "tick": 287,
    "worldX": 208,
    "worldY": 400,
    "intent": "fill",
@@ -225,7 +249,7 @@
    ]
   },
   {
-   "tick": 304,
+   "tick": 288,
    "worldX": 176,
    "worldY": 400,
    "intent": "fill",
@@ -235,7 +259,7 @@
    ]
   },
   {
-   "tick": 387,
+   "tick": 373,
    "worldX": 48,
    "worldY": 400,
    "intent": "fill",
@@ -245,8 +269,32 @@
    ]
   },
   {
-   "tick": 865,
-   "worldX": 23,
+   "tick": 555,
+   "worldX": 130,
+   "worldY": 190,
+   "intent": "reverse"
+  },
+  {
+   "tick": 556,
+   "worldX": 129,
+   "worldY": 191,
+   "intent": "reverse"
+  },
+  {
+   "tick": 559,
+   "worldX": 127,
+   "worldY": 192,
+   "intent": "reverse"
+  },
+  {
+   "tick": 560,
+   "worldX": 125,
+   "worldY": 193,
+   "intent": "reverse"
+  },
+  {
+   "tick": 829,
+   "worldX": 52,
    "worldY": 32,
    "intent": "reverse"
   }

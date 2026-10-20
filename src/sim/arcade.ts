@@ -183,6 +183,11 @@ export class Body {
   gravityY = 0;
   immovable = false;
   collideWorldBounds = false;
+  /**
+   * When set, a tile only acts as floor if the body's foot position (the bottom-centre point) is over it.
+   * Walls and ceilings still use the whole body.
+   */
+  footSupport = false;
   readonly checkCollision: Flags4 = { left: true, right: true, up: true, down: true };
   readonly blocked: Flags4 = { left: false, right: false, up: false, down: false };
 
@@ -202,6 +207,7 @@ export class Body {
     copy.gravityY = this.gravityY;
     copy.immovable = this.immovable;
     copy.collideWorldBounds = this.collideWorldBounds;
+    copy.footSupport = this.footSupport;
     Object.assign(copy.checkCollision, this.checkCollision);
     Object.assign(copy.blocked, this.blocked);
     return copy;
@@ -365,6 +371,14 @@ function tileCheckX(body: Body, tile: Tile): number {
   return ox;
 }
 
+/** The foot position counts as over a tile from its left edge to its right edge inclusive. */
+function footOver(body: Body, tile: Tile): boolean {
+  if (!body.footSupport) return true;
+  const foot = body.x + body.width / 2;
+  const wx = tile.x * TILE_SIZE;
+  return foot >= wx && foot <= wx + TILE_SIZE;
+}
+
 function tileCheckY(body: Body, tile: Tile): number {
   let oy = 0;
   const wy = tile.y * TILE_SIZE;
@@ -373,7 +387,7 @@ function tileCheckY(body: Body, tile: Tile): number {
       oy = body.y - (wy + TILE_SIZE);
       if (oy < -TILE_BIAS) oy = 0;
     }
-  } else if (body.deltaY() > 0 && !body.blocked.down && tile.collideUp && body.checkCollision.down) {
+  } else if (body.deltaY() > 0 && !body.blocked.down && tile.collideUp && body.checkCollision.down && footOver(body, tile)) {
     if (tile.faceTop && body.bottom > wy) {
       oy = body.bottom - wy;
       if (oy > TILE_BIAS) oy = 0;
