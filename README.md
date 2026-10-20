@@ -2,7 +2,7 @@
 
 Willy cannot see, so you guide him. He walks on his own, and your clicks are the only control. Click Willy to turn him around. Click an empty box to fill it with a bridge piece, and get him safely to Martha. Each stage is a puzzle of timing and placement.
 
-This is a TypeScript, Vite and [Phaser](https://phaser.io) rebuild of the 2014 Phaser 2.0.3 game. Gameplay, levels, art and sound are unchanged. The previous implementation is archived at the git tag `legacy-phaser2-final` (see [docs/MIGRATION.md](docs/MIGRATION.md)).
+This is a TypeScript, Vite and [Phaser](https://phaser.io) rebuild of the 2014 Phaser 2.0.3 game. Levels, art and sound are unchanged. Gameplay is unchanged except for one deliberate fix: Willy now falls into every open gap, including a single box, instead of walking over it (see [docs/MIGRATION.md](docs/MIGRATION.md), "Known discrepancies"). The previous implementation is archived at the git tag `legacy-phaser2-final` (see [docs/MIGRATION.md](docs/MIGRATION.md)).
 
 ## How to play
 

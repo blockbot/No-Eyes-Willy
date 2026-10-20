@@ -1,8 +1,8 @@
 {
  "level": 5,
  "id": "Level_0_5",
- "winTick": 1685,
- "ticks": 1685,
+ "winTick": 1619,
+ "ticks": 1619,
  "actions": [
   {
    "tick": 6,
@@ -195,7 +195,19 @@
    ]
   },
   {
-   "tick": 118,
+   "tick": 108,
+   "worldX": 193,
+   "worldY": 800,
+   "intent": "reverse"
+  },
+  {
+   "tick": 109,
+   "worldX": 194,
+   "worldY": 801,
+   "intent": "reverse"
+  },
+  {
+   "tick": 110,
    "worldX": 400,
    "worldY": 720,
    "intent": "fill",
@@ -205,7 +217,7 @@
    ]
   },
   {
-   "tick": 119,
+   "tick": 111,
    "worldX": 432,
    "worldY": 720,
    "intent": "fill",
@@ -215,7 +227,7 @@
    ]
   },
   {
-   "tick": 230,
+   "tick": 223,
    "worldX": 240,
    "worldY": 592,
    "intent": "fill",
@@ -225,7 +237,7 @@
    ]
   },
   {
-   "tick": 231,
+   "tick": 224,
    "worldX": 208,
    "worldY": 592,
    "intent": "fill",
@@ -235,7 +247,7 @@
    ]
   },
   {
-   "tick": 232,
+   "tick": 225,
    "worldX": 176,
    "worldY": 592,
    "intent": "fill",
@@ -245,7 +257,7 @@
    ]
   },
   {
-   "tick": 299,
+   "tick": 292,
    "worldX": 336,
    "worldY": 496,
    "intent": "fill",
@@ -255,7 +267,7 @@
    ]
   },
   {
-   "tick": 300,
+   "tick": 293,
    "worldX": 304,
    "worldY": 496,
    "intent": "fill",
@@ -265,7 +277,7 @@
    ]
   },
   {
-   "tick": 301,
+   "tick": 294,
    "worldX": 272,
    "worldY": 496,
    "intent": "fill",
@@ -275,25 +287,37 @@
    ]
   },
   {
-   "tick": 604,
-   "worldX": 46,
+   "tick": 432,
+   "worldX": 126,
+   "worldY": 672,
+   "intent": "reverse"
+  },
+  {
+   "tick": 433,
+   "worldX": 125,
+   "worldY": 673,
+   "intent": "reverse"
+  },
+  {
+   "tick": 598,
+   "worldX": 34,
    "worldY": 542,
    "intent": "reverse"
   },
   {
-   "tick": 753,
-   "worldX": 272,
-   "worldY": 566,
+   "tick": 599,
+   "worldX": 32,
+   "worldY": 543,
    "intent": "reverse"
   },
   {
-   "tick": 754,
-   "worldX": 272,
-   "worldY": 569,
+   "tick": 600,
+   "worldX": 34,
+   "worldY": 544,
    "intent": "reverse"
   },
   {
-   "tick": 1029,
+   "tick": 1003,
    "worldX": 368,
    "worldY": 112,
    "intent": "fill",
@@ -303,7 +327,7 @@
    ]
   },
   {
-   "tick": 1030,
+   "tick": 1004,
    "worldX": 336,
    "worldY": 112,
    "intent": "fill",
@@ -313,25 +337,25 @@
    ]
   },
   {
-   "tick": 1076,
-   "worldX": 345,
-   "worldY": 317,
+   "tick": 1018,
+   "worldX": 365,
+   "worldY": 285,
    "intent": "reverse"
   },
   {
-   "tick": 1091,
-   "worldX": 367,
-   "worldY": 409,
+   "tick": 1023,
+   "worldX": 370,
+   "worldY": 286,
    "intent": "reverse"
   },
   {
-   "tick": 1387,
+   "tick": 1321,
    "worldX": 110,
    "worldY": 254,
    "intent": "reverse"
   },
   {
-   "tick": 1589,
+   "tick": 1523,
    "worldX": 210,
    "worldY": 62,
    "intent": "reverse"

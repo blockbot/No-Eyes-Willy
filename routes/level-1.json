@@ -1,11 +1,23 @@
 {
  "level": 1,
  "id": "Level_0_1",
- "winTick": 2174,
- "ticks": 2174,
+ "winTick": 2112,
+ "ticks": 2112,
  "actions": [
   {
-   "tick": 183,
+   "tick": 166,
+   "worldX": 607,
+   "worldY": 800,
+   "intent": "reverse"
+  },
+  {
+   "tick": 167,
+   "worldX": 605,
+   "worldY": 801,
+   "intent": "reverse"
+  },
+  {
+   "tick": 174,
    "worldX": 592,
    "worldY": 848,
    "intent": "fill",
@@ -15,7 +27,7 @@
    ]
   },
   {
-   "tick": 184,
+   "tick": 175,
    "worldX": 560,
    "worldY": 848,
    "intent": "fill",
@@ -25,7 +37,7 @@
    ]
   },
   {
-   "tick": 185,
+   "tick": 176,
    "worldX": 528,
    "worldY": 848,
    "intent": "fill",
@@ -35,7 +47,19 @@
    ]
   },
   {
-   "tick": 279,
+   "tick": 255,
+   "worldX": 447,
+   "worldY": 800,
+   "intent": "reverse"
+  },
+  {
+   "tick": 256,
+   "worldX": 445,
+   "worldY": 801,
+   "intent": "reverse"
+  },
+  {
+   "tick": 263,
    "worldX": 432,
    "worldY": 848,
    "intent": "fill",
@@ -45,7 +69,7 @@
    ]
   },
   {
-   "tick": 280,
+   "tick": 264,
    "worldX": 400,
    "worldY": 848,
    "intent": "fill",
@@ -55,7 +79,7 @@
    ]
   },
   {
-   "tick": 281,
+   "tick": 265,
    "worldX": 368,
    "worldY": 848,
    "intent": "fill",
@@ -65,13 +89,25 @@
    ]
   },
   {
-   "tick": 489,
+   "tick": 475,
    "worldX": 302,
    "worldY": 606,
    "intent": "reverse"
   },
   {
-   "tick": 558,
+   "tick": 527,
+   "worldX": 385,
+   "worldY": 608,
+   "intent": "reverse"
+  },
+  {
+   "tick": 528,
+   "worldX": 387,
+   "worldY": 609,
+   "intent": "reverse"
+  },
+  {
+   "tick": 535,
    "worldX": 400,
    "worldY": 656,
    "intent": "fill",
@@ -81,7 +117,7 @@
    ]
   },
   {
-   "tick": 559,
+   "tick": 536,
    "worldX": 432,
    "worldY": 656,
    "intent": "fill",
@@ -91,7 +127,7 @@
    ]
   },
   {
-   "tick": 560,
+   "tick": 537,
    "worldX": 464,
    "worldY": 656,
    "intent": "fill",
@@ -101,7 +137,19 @@
    ]
   },
   {
-   "tick": 674,
+   "tick": 635,
+   "worldX": 577,
+   "worldY": 608,
+   "intent": "reverse"
+  },
+  {
+   "tick": 636,
+   "worldX": 578,
+   "worldY": 609,
+   "intent": "reverse"
+  },
+  {
+   "tick": 643,
    "worldX": 592,
    "worldY": 656,
    "intent": "fill",
@@ -111,7 +159,7 @@
    ]
   },
   {
-   "tick": 675,
+   "tick": 644,
    "worldX": 624,
    "worldY": 656,
    "intent": "fill",
@@ -121,7 +169,7 @@
    ]
   },
   {
-   "tick": 676,
+   "tick": 645,
    "worldX": 656,
    "worldY": 656,
    "intent": "fill",
@@ -131,7 +179,19 @@
    ]
   },
   {
-   "tick": 988,
+   "tick": 943,
+   "worldX": 639,
+   "worldY": 416,
+   "intent": "reverse"
+  },
+  {
+   "tick": 944,
+   "worldX": 637,
+   "worldY": 417,
+   "intent": "reverse"
+  },
+  {
+   "tick": 951,
    "worldX": 624,
    "worldY": 464,
    "intent": "fill",
@@ -141,7 +201,7 @@
    ]
   },
   {
-   "tick": 989,
+   "tick": 952,
    "worldX": 592,
    "worldY": 464,
    "intent": "fill",
@@ -151,7 +211,7 @@
    ]
   },
   {
-   "tick": 990,
+   "tick": 953,
    "worldX": 560,
    "worldY": 464,
    "intent": "fill",
@@ -161,7 +221,7 @@
    ]
   },
   {
-   "tick": 991,
+   "tick": 954,
    "worldX": 528,
    "worldY": 464,
    "intent": "fill",
@@ -171,7 +231,7 @@
    ]
   },
   {
-   "tick": 992,
+   "tick": 955,
    "worldX": 496,
    "worldY": 464,
    "intent": "fill",
@@ -181,7 +241,19 @@
    ]
   },
   {
-   "tick": 1142,
+   "tick": 1090,
+   "worldX": 382,
+   "worldY": 416,
+   "intent": "reverse"
+  },
+  {
+   "tick": 1091,
+   "worldX": 381,
+   "worldY": 417,
+   "intent": "reverse"
+  },
+  {
+   "tick": 1098,
    "worldX": 368,
    "worldY": 464,
    "intent": "fill",
@@ -191,7 +263,7 @@
    ]
   },
   {
-   "tick": 1143,
+   "tick": 1099,
    "worldX": 336,
    "worldY": 464,
    "intent": "fill",
@@ -201,7 +273,7 @@
    ]
   },
   {
-   "tick": 1144,
+   "tick": 1100,
    "worldX": 304,
    "worldY": 464,
    "intent": "fill",
@@ -211,25 +283,55 @@
    ]
   },
   {
-   "tick": 1542,
-   "worldX": 73,
-   "worldY": 284,
+   "tick": 1198,
+   "worldX": 191,
+   "worldY": 416,
    "intent": "reverse"
   },
   {
-   "tick": 1758,
-   "worldX": 273,
+   "tick": 1199,
+   "worldX": 190,
+   "worldY": 417,
+   "intent": "reverse"
+  },
+  {
+   "tick": 1492,
+   "worldX": 76,
+   "worldY": 285,
+   "intent": "reverse"
+  },
+  {
+   "tick": 1498,
+   "worldX": 80,
+   "worldY": 286,
+   "intent": "reverse"
+  },
+  {
+   "tick": 1711,
+   "worldX": 275,
    "worldY": 158,
    "intent": "reverse"
   },
   {
-   "tick": 1893,
+   "tick": 1845,
    "worldX": 338,
    "worldY": 32,
    "intent": "reverse"
   },
   {
-   "tick": 1979,
+   "tick": 1913,
+   "worldX": 448,
+   "worldY": 32,
+   "intent": "reverse"
+  },
+  {
+   "tick": 1914,
+   "worldX": 450,
+   "worldY": 33,
+   "intent": "reverse"
+  },
+  {
+   "tick": 1921,
    "worldX": 464,
    "worldY": 80,
    "intent": "fill",
@@ -239,7 +341,7 @@
    ]
   },
   {
-   "tick": 1980,
+   "tick": 1922,
    "worldX": 496,
    "worldY": 80,
    "intent": "fill",
@@ -249,7 +351,7 @@
    ]
   },
   {
-   "tick": 1981,
+   "tick": 1923,
    "worldX": 528,
    "worldY": 80,
    "intent": "fill",
@@ -259,13 +361,25 @@
    ]
   },
   {
-   "tick": 2153,
-   "worldX": 768,
-   "worldY": 47,
+   "tick": 2079,
+   "worldX": 737,
+   "worldY": 32,
    "intent": "reverse"
   },
   {
-   "tick": 2154,
+   "tick": 2080,
+   "worldX": 739,
+   "worldY": 33,
+   "intent": "reverse"
+  },
+  {
+   "tick": 2091,
+   "worldX": 769,
+   "worldY": 57,
+   "intent": "reverse"
+  },
+  {
+   "tick": 2092,
    "worldX": 752,
    "worldY": 80,
    "intent": "fill",
